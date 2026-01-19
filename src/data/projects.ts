@@ -106,11 +106,11 @@ export const projects: Project[] = [
         title: "The Challenge",
         content: "Friction at the Point of Renewal",
         bullets: [
-          "The Trust Gap: The lack of fixed, visible pricing created 'Comparison Anxiety.' Merchants often suspected they weren't getting the best deal, leading to hesitation and suspicion.",
-          "The Operational Cost: Worldpay agents were forced to manually dial outbound calls for every expiring contract. Over 700+ monthly support tickets were dedicated solely to 'What has changed in my contract?'"
+          "Process Friction → Decreased Retention: The lack of a self-service renewal option created friction at a critical touchpoint. Merchants experienced delays, confusion, and frustration, directly contributing to lower renewal rates and increased churn.",
+          "Operational Burden: The manual renewal process placed a significant burden on the operations team. Agents were forced to make outbound calls to every merchant with an expiring contract"
         ],
         pullQuote: {
-          text: "Transform a high-friction, offline negotiation into a seamless digital experience where merchants could review terms and legally sign in clicks, not hours.",
+          text: "Transform a high-friction, offline negotiation into a seamless digital experience where merchants could review terms and legally sign in clicks",
           label: "The Goal"
         }
       },
