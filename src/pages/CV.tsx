@@ -1,26 +1,9 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Download, ExternalLink, ArrowLeft, Loader2 } from "lucide-react";
+import { Download, ExternalLink, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { resumeData } from "@/data/resume-data";
 
 const CV = () => {
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownload = async () => {
-    setIsDownloading(true);
-    
-    // Open the PDF in a new tab (Google Drive direct download)
-    window.open(
-      "https://drive.google.com/uc?export=download&id=13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0",
-      "_blank"
-    );
-    
-    // Show loading state briefly for UX feedback
-    setTimeout(() => {
-      setIsDownloading(false);
-    }, 1500);
-  };
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -33,24 +16,15 @@ const CV = () => {
             </Link>
           </Button>
           <div className="w-px h-5 bg-border" />
-          <Button 
-            variant="hero" 
-            size="sm" 
-            className="rounded-xl gap-2 min-w-[130px]" 
-            onClick={handleDownload}
-            disabled={isDownloading}
-          >
-            {isDownloading ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                Downloading...
-              </>
-            ) : (
-              <>
-                <Download className="h-4 w-4" />
-                Download PDF
-              </>
-            )}
+          <Button variant="hero" size="sm" className="rounded-xl gap-2" asChild>
+            <a
+              href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download className="h-4 w-4" />
+              Download PDF
+            </a>
           </Button>
         </div>
       </nav>
