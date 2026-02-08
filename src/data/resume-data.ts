@@ -45,31 +45,31 @@ export const resumeData: ResumeData = {
       title: "Senior Product Designer",
       company: "Worldpay",
       companyUrl: "https://worldpay.com",
-      period: "March 2024 to Present",
+      period: "March 2025 - Present",
       location: "London, UK",
       bullets: [
-        "Leading merchant experience initiatives across self-service platforms",
-        "Designing contract renewal flows that increased digital adoption",
-        "Collaborating with engineering on component library development",
+        "Led multiple strategic redesigns, reducing support call volumes by 30%",
+        "Built a contract renewal system used by thousands.",
+        "Translated technical requirements into detailed user flows and prototypes",
       ],
     },
     {
-      title: "Senior Product Designer",
+      title: "Senior UX/UI Designer",
       company: "Oak National Academy",
       companyUrl: "https://thenational.academy",
-      period: "Nov 2023 to Present",
-      location: "Remote, UK",
+      period: "Nov 2023 - March 2025",
+      location: "London, UK",
       bullets: [
-        "Led the design of an accessible e-learning platform used by thousands.",
-        "Improved user experience by using data and real-world research.",
-        "Delivered high-quality designs while working closely with developers.",
+        "Led the design of an accessible e-learning platform.",
+        "Improved user experience by using data and user research.",
+        "Delivered high-quality designs while working closely with developers",
       ],
     },
     {
       title: "Senior UX/Interaction Designer",
       company: "Microsoft Teams",
       companyUrl: "https://microsoft.com/teams",
-      period: "Nov 2022 to Nov 2023",
+      period: "Nov 2022 - Nov 2023",
       location: "London, UK",
       bullets: [
         "Boosted daily users by 200% by integrating 20+ major apps.",
@@ -81,7 +81,7 @@ export const resumeData: ResumeData = {
       title: "Product Designer (UI Focused)",
       company: "Sage",
       companyUrl: "https://sage.com",
-      period: "Nov 2021 to Sept 2022",
+      period: "Nov 2021 - Sept 2022",
       location: "London, UK",
       bullets: [
         "Built a scalable Design System to speed up product development.",
@@ -93,11 +93,11 @@ export const resumeData: ResumeData = {
       title: "Senior Product Designer",
       company: "Gophr",
       companyUrl: "https://gophr.com",
-      period: "Sept 2021 to May 2022",
+      period: "Sept 2021 - May 2022",
       location: "London, UK",
       bullets: [
         "Redesigned the core platform to simplify complex delivery logistics.",
-        "Created a new design system to modernize the product look and feel.",
+        "Created a new design system to modernise the product look and feel.",
         "Validated ideas quickly using functional prototypes and user scenarios.",
       ],
     },
@@ -105,7 +105,7 @@ export const resumeData: ResumeData = {
       title: "UX/UI Designer",
       company: "Buzz Bingo",
       companyUrl: "https://buzzbingo.com",
-      period: "April 2019 to Sept 2022",
+      period: "May 2019 - Sept 2022",
       location: "London, UK",
       bullets: [
         "Unified the experience across Web, iOS, and Android apps.",
@@ -116,12 +116,12 @@ export const resumeData: ResumeData = {
     {
       title: "Lead UX/UI Designer",
       company: "Wash Doctors",
-      period: "March 2019 to May 2019",
+      period: "Feb 2018 - May 2019",
       location: "London, UK",
       bullets: [
         "Owned the full app design for both customers and staff.",
         "Drove product growth by aligning design strategy with business goals.",
-        "Optimized the booking flow, making it easier for users to convert.",
+        "Optimised the booking flow, making it easier for users to convert.",
       ],
     },
   ],
@@ -140,15 +140,19 @@ export const resumeData: ResumeData = {
   skills: [
     {
       category: "Design",
-      items: ["Product Design", "UX Research", "Interaction Design", "Design Systems", "Prototyping", "Visual Design"],
+      items: ["End-to-end Product Design", "UX/UI Design", "User Research / Interviews", "Workshop Facilitation", "Wireframing & Prototyping", "Design Systems Management", "User Testing and Analytics"],
+    },
+    {
+      category: "Soft Skills",
+      items: ["Stakeholder Management", "Work Well Under Pressure"],
+    },
+    {
+      category: "Code",
+      items: ["HTML/CSS", "JavaScript", "React", "Tailwind", "Responsive Design", "Accessibility", "Git"],
     },
     {
       category: "Tools",
-      items: ["Figma", "Framer", "Principle", "Adobe Creative Suite", "Miro", "Notion"],
-    },
-    {
-      category: "Development",
-      items: ["HTML/CSS", "JavaScript", "React", "Tailwind CSS", "Git"],
+      items: ["Figma", "Miro", "Notion", "Adobe CC", "GitHub"],
     },
   ],
 };
