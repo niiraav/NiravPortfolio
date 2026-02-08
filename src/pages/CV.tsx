@@ -18,9 +18,8 @@ const CV = () => {
           <div className="w-px h-5 bg-border" />
           <Button variant="hero" size="sm" className="rounded-xl gap-2" asChild>
             <a
-              href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://drive.google.com/uc?export=download&id=13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0"
+              download
             >
               <Download className="h-4 w-4" />
               Download PDF
@@ -92,7 +91,14 @@ const CV = () => {
                 </div>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground mb-3">
                   <span>{job.period}</span>
+                  <span>·</span>
                   <span>{job.location}</span>
+                  {job.type && (
+                    <>
+                      <span>·</span>
+                      <span>{job.type}</span>
+                    </>
+                  )}
                 </div>
                 <ul className="space-y-1">
                   {job.bullets.map((bullet, bulletIndex) => (
@@ -117,20 +123,17 @@ const CV = () => {
               <div key={index}>
                 <h3 className="text-foreground font-medium mb-1">{edu.degree}</h3>
                 <p className="text-foreground/80 text-sm mb-1">{edu.institution}</p>
-                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground mb-3">
+                <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground">
                   <span>{edu.period}</span>
+                  <span>·</span>
                   <span>{edu.location}</span>
+                  {edu.gpa && (
+                    <>
+                      <span>·</span>
+                      <span>{edu.gpa}</span>
+                    </>
+                  )}
                 </div>
-                <ul className="space-y-1">
-                  {edu.bullets.map((bullet, bulletIndex) => (
-                    <li
-                      key={bulletIndex}
-                      className="text-muted-foreground text-sm pl-4 relative before:content-[''] before:absolute before:left-0 before:top-[0.6em] before:w-1.5 before:h-1.5 before:bg-muted-foreground/30 before:rounded-full"
-                    >
-                      {bullet}
-                    </li>
-                  ))}
-                </ul>
               </div>
             ))}
           </div>
