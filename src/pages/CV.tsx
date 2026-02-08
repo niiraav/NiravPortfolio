@@ -1,9 +1,37 @@
 import { Link } from "react-router-dom";
-import { Download, ExternalLink, ArrowLeft } from "lucide-react";
+import { Download, ExternalLink, ArrowLeft, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { resumeData } from "@/data/resume-data";
+import { useRef, useState } from "react";
 
 const CV = () => {
+  const cvContentRef = useRef<HTMLDivElement>(null);
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownloadPDF = async () => {
+    if (!cvContentRef.current) return;
+    
+    setIsDownloading(true);
+    
+    try {
+      const html2pdf = (await import("html2pdf.js")).default;
+      
+      const opt = {
+        margin: [10, 10, 10, 10],
+        filename: "Nirav_Arvinda_CV.pdf",
+        image: { type: "jpeg", quality: 0.98 },
+        html2canvas: { scale: 2, useCORS: true },
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+      };
+
+      await html2pdf().set(opt).from(cvContentRef.current).save();
+    } catch (error) {
+      console.error("Error generating PDF:", error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -16,21 +44,30 @@ const CV = () => {
             </Link>
           </Button>
           <div className="w-px h-5 bg-border" />
-          <Button variant="hero" size="sm" className="rounded-xl gap-2" asChild>
-            <a
-              href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Download className="h-4 w-4" />
-              Download PDF
-            </a>
+          <Button 
+            variant="hero" 
+            size="sm" 
+            className="rounded-xl gap-2 min-w-[130px]"
+            onClick={handleDownloadPDF}
+            disabled={isDownloading}
+          >
+            {isDownloading ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Downloading...
+              </>
+            ) : (
+              <>
+                <Download className="h-4 w-4" />
+                Download PDF
+              </>
+            )}
           </Button>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-6 pt-28 pb-20">
+      <main ref={cvContentRef} className="max-w-2xl mx-auto px-6 pt-28 pb-20">
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-start gap-5 mb-6">
