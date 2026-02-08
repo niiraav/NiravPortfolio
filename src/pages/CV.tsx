@@ -61,7 +61,7 @@ const CV = () => {
       {/* Main Content */}
       <main className="max-w-2xl mx-auto px-6 pt-28 pb-20">
         {/* Header */}
-        <header className="mb-12">
+        <header className="mb-12 opacity-0 animate-fade-in">
           <div className="flex items-start gap-5 mb-6">
             <img
               src={resumeData.avatar}
@@ -97,7 +97,7 @@ const CV = () => {
         </header>
 
         {/* Work Experience */}
-        <section className="mb-12">
+        <section className="mb-12 opacity-0 animate-fade-in animation-delay-100">
           <h2 className="text-xl font-bold font-serif text-foreground mb-6">Work</h2>
           <div className="space-y-8">
             {resumeData.work.map((job, index) => (
@@ -139,7 +139,7 @@ const CV = () => {
         </section>
 
         {/* Education */}
-        <section className="mb-12">
+        <section className="mb-12 opacity-0 animate-fade-in animation-delay-200">
           <h2 className="text-xl font-bold font-serif text-foreground mb-6">Education</h2>
           <div className="space-y-8">
             {resumeData.education.map((edu, index) => (
@@ -166,7 +166,7 @@ const CV = () => {
         </section>
 
         {/* Skills */}
-        <section className="mb-12">
+        <section className="mb-12 opacity-0 animate-fade-in animation-delay-300">
           <h2 className="text-xl font-bold font-serif text-foreground mb-6">Skills</h2>
           <div className="space-y-4">
             {resumeData.skills.map((skillGroup, index) => (
@@ -190,7 +190,7 @@ const CV = () => {
         </section>
 
         {/* Footer */}
-        <footer className="pt-8 border-t border-border text-center text-sm text-muted-foreground">
+        <footer className="pt-8 border-t border-border text-center text-sm text-muted-foreground opacity-0 animate-fade-in animation-delay-400">
           © {new Date().getFullYear()} {resumeData.name}
         </footer>
       </main>
