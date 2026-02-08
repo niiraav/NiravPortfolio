@@ -1,26 +1,13 @@
 import { Link } from "react-router-dom";
-import { Download, ExternalLink, ArrowLeft, Loader2 } from "lucide-react";
+import { Download, ExternalLink, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { resumeData } from "@/data/resume-data";
-import { useState } from "react";
 
 const CV = () => {
-  const [isDownloading, setIsDownloading] = useState(false);
-
-  const handleDownloadPDF = () => {
-    setIsDownloading(true);
-    
-    // Small delay for UX feedback, then trigger print dialog
-    setTimeout(() => {
-      window.print();
-      setIsDownloading(false);
-    }, 500);
-  };
-
   return (
-    <div className="min-h-screen bg-background print:bg-white print:min-h-0">
-      {/* Navigation - hidden when printing */}
-      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 print:hidden">
+    <div className="min-h-screen bg-background">
+      {/* Navigation */}
+      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
         <div className="flex items-center gap-2 bg-nav/80 backdrop-blur-xl rounded-2xl px-3 py-2 shadow-nav border border-nav-border">
           <Button variant="nav" size="sm" className="rounded-xl gap-2" asChild>
             <Link to="/">
@@ -29,30 +16,21 @@ const CV = () => {
             </Link>
           </Button>
           <div className="w-px h-5 bg-border" />
-          <Button 
-            variant="hero" 
-            size="sm" 
-            className="rounded-xl gap-2 min-w-[130px]"
-            onClick={handleDownloadPDF}
-            disabled={isDownloading}
-          >
-            {isDownloading ? (
-              <>
-                <Loader2 className="h-4 w-4 animate-spin" />
-                Downloading...
-              </>
-            ) : (
-              <>
-                <Download className="h-4 w-4" />
-                Download PDF
-              </>
-            )}
+          <Button variant="hero" size="sm" className="rounded-xl gap-2" asChild>
+            <a
+              href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Download className="h-4 w-4" />
+              Download PDF
+            </a>
           </Button>
         </div>
       </nav>
 
       {/* Main Content */}
-      <main className="max-w-2xl mx-auto px-6 pt-28 pb-20 print:pt-6 print:pb-6">
+      <main className="max-w-2xl mx-auto px-6 pt-28 pb-20">
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-start gap-5 mb-6">
