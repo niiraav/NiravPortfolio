@@ -84,7 +84,7 @@ const CV = () => {
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors underline underline-offset-4"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors border-b border-dotted border-muted-foreground/50 hover:border-foreground pb-0.5"
               >
                 {link.label}
                 {link.external && <ExternalLink className="h-3 w-3" />}
@@ -110,7 +110,7 @@ const CV = () => {
                         href={job.companyUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="underline underline-offset-4 hover:text-primary transition-colors"
+                        className="border-b border-dotted border-muted-foreground/50 hover:border-foreground hover:text-foreground pb-0.5 transition-colors"
                       >
                         {job.company}
                       </a>
