@@ -1,9 +1,29 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Download, ExternalLink, ArrowLeft } from "lucide-react";
+import { Download, ExternalLink, ArrowLeft, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { resumeData } from "@/data/resume-data";
 
 const CV = () => {
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    
+    // Create a link element and trigger download
+    const link = document.createElement("a");
+    link.href = "/Nirav-Arvinda-CV.pdf";
+    link.download = "Nirav-Arvinda-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    // Show loading state for 1.5 seconds
+    setTimeout(() => {
+      setIsDownloading(false);
+    }, 1500);
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
@@ -16,15 +36,24 @@ const CV = () => {
             </Link>
           </Button>
           <div className="w-px h-5 bg-border" />
-          <Button variant="hero" size="sm" className="rounded-xl gap-2" asChild>
-            <a
-              href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Download className="h-4 w-4" />
-              Download PDF
-            </a>
+          <Button 
+            variant="hero" 
+            size="sm" 
+            className="rounded-xl gap-2" 
+            onClick={handleDownload}
+            disabled={isDownloading}
+          >
+            {isDownloading ? (
+              <>
+                <Loader2 className="h-4 w-4 animate-spin" />
+                Downloading...
+              </>
+            ) : (
+              <>
+                <Download className="h-4 w-4" />
+                Download PDF
+              </>
+            )}
           </Button>
         </div>
       </nav>
