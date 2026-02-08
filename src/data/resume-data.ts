@@ -1,11 +1,10 @@
+import avatarImage from "@/assets/avatar.jpg";
+
 export interface ResumeData {
   name: string;
   title: string;
   avatar: string;
   bio: string;
-  phone: string;
-  email: string;
-  website: string;
   links: {
     label: string;
     href: string;
@@ -17,7 +16,6 @@ export interface ResumeData {
     companyUrl?: string;
     period: string;
     location: string;
-    type?: string;
     bullets: string[];
   }[];
   education: {
@@ -25,7 +23,7 @@ export interface ResumeData {
     institution: string;
     period: string;
     location: string;
-    gpa?: string;
+    bullets: string[];
   }[];
   skills: {
     category: string;
@@ -35,119 +33,123 @@ export interface ResumeData {
 
 export const resumeData: ResumeData = {
   name: "Nirav Arvinda",
-  title: "Senior UX/UI Designer",
-  avatar: "/lovable-uploads/ec518bb2-b216-49b6-b35c-fa7aefcef1b3.jpg",
-  phone: "(+44) 7837391747",
-  email: "niravarvinda@gmail.com",
-  website: "www.nirav.work",
+  title: "Senior Product Designer",
+  avatar: avatarImage,
   bio: "I'm a curious and enthusiastic product designer with a side passion for code and solving user problems. Whether it's optimising merchant dashboards or simplifying checkout flows, I blend creative problem-solving with rigorous logic.",
   links: [
     { label: "Portfolio", href: "/", external: false },
     { label: "X", href: "https://x.com/niiraav", external: true },
     { label: "LinkedIn", href: "https://linkedin.com/in/niiraav", external: true },
-    { label: "Email", href: "mailto:niravarvinda@gmail.com", external: true },
+    { label: "Email", href: "mailto:hello@nirav.design", external: true },
   ],
   work: [
     {
       title: "Senior Product Designer",
       company: "Worldpay",
       companyUrl: "https://worldpay.com",
-      period: "Nov 2023 - Present",
+      period: "March 2024 to Present",
       location: "London, UK",
-      type: "Contract",
       bullets: [
-        "Led strategic redesigns of login and contract renewal flows measurably reducing support call volumes",
-        "Translated intricate technical requirements into detailed user flows, data-driven prototypes, and scalable design system components",
+        "Leading merchant experience initiatives across self-service platforms",
+        "Designing contract renewal flows that increased digital adoption",
+        "Collaborating with engineering on component library development",
       ],
     },
     {
-      title: "Senior UX/UI Designer",
+      title: "Senior Product Designer",
       company: "Oak National Academy",
       companyUrl: "https://thenational.academy",
-      period: "Nov 2023 - Present",
-      location: "London, UK",
-      type: "Contract",
-      bullets: [],
+      period: "Nov 2023 to Present",
+      location: "Remote, UK",
+      bullets: [
+        "Designing accessible learning experiences for teachers and students",
+        "Leading UX strategy for curriculum and lesson planning tools",
+        "Working with cross-functional teams to improve educational outcomes",
+      ],
     },
     {
       title: "Senior UX/Interaction Designer",
       company: "Microsoft Teams",
       companyUrl: "https://microsoft.com/teams",
-      period: "Nov 2022 - Nov 2023",
+      period: "Nov 2022 to Nov 2023",
       location: "London, UK",
-      type: "Contract",
       bullets: [
-        "Led integration of 20+ high-profile apps, boosting DAU by 200%",
-        "Designed enterprise solutions with detailed user flows, wireframes, and high-fidelity designs",
+        "Designed interaction patterns for Teams collaboration features",
+        "Contributed to Teams design system and component guidelines",
+        "Conducted user research to improve meeting experiences",
       ],
     },
     {
-      title: "Product Designer (UI focused)",
+      title: "Product Designer (UI Focused)",
       company: "Sage",
       companyUrl: "https://sage.com",
-      period: "Nov 2021 - Sept 2022",
+      period: "Nov 2021 to Sept 2022",
       location: "London, UK",
-      type: "Contract",
       bullets: [
-        "Led the creation of a Design System, developing core visuals, UI patterns, and components",
-        "Collaborated with cross-functional teams to maintain design integrity and accessibility standards",
+        "Created UI designs for accounting and business management tools",
+        "Worked on design system components and pattern libraries",
+        "Collaborated with product teams on feature development",
       ],
     },
     {
       title: "Senior Product Designer",
       company: "Gophr",
       companyUrl: "https://gophr.com",
-      period: "Sept 2021 - May 2022",
+      period: "Sept 2021 to May 2022",
       location: "London, UK",
-      type: "Freelance",
       bullets: [
-        "Led end-to-end redesign of Gophr's delivery solution, creating the web platform's design system, user flows, scenarios, and fully functional prototypes",
+        "Led design for same-day delivery logistics platform",
+        "Redesigned courier and merchant booking experiences",
+        "Improved conversion rates through UX optimizations",
       ],
     },
     {
       title: "UX/UI Designer",
       company: "Buzz Bingo",
       companyUrl: "https://buzzbingo.com",
-      period: "May 2019 - Sept 2022",
+      period: "April 2019 to Sept 2022",
       location: "London, UK",
-      type: "Full Time",
       bullets: [
-        "Worked on cross-platform products spanning mobile (iOS, Android), and web",
-        "Conducted extensive user research, developed personas, and leveraged analytics to inform design decisions",
+        "Designed mobile app and web experiences for gaming platform",
+        "Created club finder and promotional features",
+        "Worked on wallet and voucher systems",
       ],
     },
     {
-      title: "Lead UX/UI Designer",
+      title: "UX/UI Designer",
       company: "Wash Doctors",
-      companyUrl: "https://www.washdoctors.co.uk/",
-      period: "Feb 2018 - May 2019",
+      period: "March 2019 to May 2019",
       location: "London, UK",
-      type: "Full Time",
       bullets: [
-        "Owned and designed customer and contractor-facing mobile apps (iOS and Android) alongside the CEO, using data and analytics to improve the experience for thousands of users",
+        "Designed service design for mobile car wash booking",
+        "Created user flows for customer and provider apps",
       ],
     },
   ],
   education: [
     {
-      degree: "BA (honours) Advertising",
-      institution: "University of the Arts London",
-      period: "Oct 2011 - July 2014",
+      degree: "BA Advertising",
+      institution: "University of the Arts London (UAL)",
+      period: "2015 to 2018",
       location: "London, UK",
-      gpa: "GPA 89%",
+      bullets: [
+        "Focus: Brand strategy and visual communication",
+        "Developed expertise in creative storytelling and design thinking",
+      ],
     },
   ],
   skills: [
     {
       category: "Design",
-      items: [
-        "End to End Product Design",
-        "User Experience (UX)",
-        "User Interface (UI)",
-        "User Research / Interviews",
-        "Workshop Facilitation",
-        "Wire-framing & Rapid Prototyping",
-      ],
+      items: ["Product Design", "UX Research", "Interaction Design", "Design Systems", "Prototyping", "Visual Design"],
+    },
+    {
+      category: "Tools",
+      items: ["Figma", "Framer", "Principle", "Adobe Creative Suite", "Miro", "Notion"],
+    },
+    {
+      category: "Development",
+      items: ["HTML/CSS", "JavaScript", "React", "Tailwind CSS", "Git"],
     },
   ],
 };
