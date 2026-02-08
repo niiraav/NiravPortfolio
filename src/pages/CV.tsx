@@ -84,7 +84,7 @@ const CV = () => {
                 href={link.href}
                 target={link.external ? "_blank" : undefined}
                 rel={link.external ? "noopener noreferrer" : undefined}
-                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors underline decoration-dotted underline-offset-4"
+                className="inline-flex items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground transition-colors"
               >
                 {link.label}
                 {link.external && <ExternalLink className="h-3 w-3" />}
