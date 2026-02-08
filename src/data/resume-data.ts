@@ -1,5 +1,3 @@
-import avatarImage from "@/assets/avatar.jpg";
-
 export interface ResumeData {
   name: string;
   title: string;
@@ -34,13 +32,13 @@ export interface ResumeData {
 export const resumeData: ResumeData = {
   name: "Nirav Arvinda",
   title: "Senior Product Designer",
-  avatar: avatarImage,
+  avatar: "/lovable-uploads/ec518bb2-b216-49b6-b35c-fa7aefcef1b3.jpg",
   bio: "I'm a curious and enthusiastic product designer with a side passion for code and solving user problems. Whether it's optimising merchant dashboards or simplifying checkout flows, I blend creative problem-solving with rigorous logic.",
   links: [
     { label: "Portfolio", href: "/", external: false },
     { label: "X", href: "https://x.com/niiraav", external: true },
-    { label: "LinkedIn", href: "https://linkedin.com/in/niiraav", external: true },
-    { label: "Email", href: "mailto:hello@nirav.design", external: true },
+    { label: "LinkedIn", href: "https://linkedin.com/in/niravarvinda", external: true },
+    { label: "Email", href: "mailto:niravarvinda@gmail.com", external: true },
   ],
   work: [
     {
@@ -62,9 +60,9 @@ export const resumeData: ResumeData = {
       period: "Nov 2023 to Present",
       location: "Remote, UK",
       bullets: [
-        "Designing accessible learning experiences for teachers and students",
-        "Leading UX strategy for curriculum and lesson planning tools",
-        "Working with cross-functional teams to improve educational outcomes",
+        "Led the design of an accessible e-learning platform used by thousands.",
+        "Improved user experience by using data and real-world research.",
+        "Delivered high-quality designs while working closely with developers.",
       ],
     },
     {
@@ -74,9 +72,9 @@ export const resumeData: ResumeData = {
       period: "Nov 2022 to Nov 2023",
       location: "London, UK",
       bullets: [
-        "Designed interaction patterns for Teams collaboration features",
-        "Contributed to Teams design system and component guidelines",
-        "Conducted user research to improve meeting experiences",
+        "Boosted daily users by 200% by integrating 20+ major apps.",
+        "Designed scalable enterprise tools from wireframes to final UI.",
+        "Solved complex user problems with detailed flows and prototypes.",
       ],
     },
     {
@@ -86,9 +84,9 @@ export const resumeData: ResumeData = {
       period: "Nov 2021 to Sept 2022",
       location: "London, UK",
       bullets: [
-        "Created UI designs for accounting and business management tools",
-        "Worked on design system components and pattern libraries",
-        "Collaborated with product teams on feature development",
+        "Built a scalable Design System to speed up product development.",
+        "Ensured consistency across all products by defining core visual styles.",
+        "Improved accessibility by partnering directly with engineering teams.",
       ],
     },
     {
@@ -98,9 +96,9 @@ export const resumeData: ResumeData = {
       period: "Sept 2021 to May 2022",
       location: "London, UK",
       bullets: [
-        "Led design for same-day delivery logistics platform",
-        "Redesigned courier and merchant booking experiences",
-        "Improved conversion rates through UX optimizations",
+        "Redesigned the core platform to simplify complex delivery logistics.",
+        "Created a new design system to modernize the product look and feel.",
+        "Validated ideas quickly using functional prototypes and user scenarios.",
       ],
     },
     {
@@ -110,19 +108,20 @@ export const resumeData: ResumeData = {
       period: "April 2019 to Sept 2022",
       location: "London, UK",
       bullets: [
-        "Designed mobile app and web experiences for gaming platform",
-        "Created club finder and promotional features",
-        "Worked on wallet and voucher systems",
+        "Unified the experience across Web, iOS, and Android apps.",
+        "Increased engagement by designing features based on user data.",
+        "Iterated designs fast using rapid prototyping and user testing.",
       ],
     },
     {
-      title: "UX/UI Designer",
+      title: "Lead UX/UI Designer",
       company: "Wash Doctors",
       period: "March 2019 to May 2019",
       location: "London, UK",
       bullets: [
-        "Designed service design for mobile car wash booking",
-        "Created user flows for customer and provider apps",
+        "Owned the full app design for both customers and staff.",
+        "Drove product growth by aligning design strategy with business goals.",
+        "Optimized the booking flow, making it easier for users to convert.",
       ],
     },
   ],
