@@ -2,40 +2,25 @@ import { Link } from "react-router-dom";
 import { Download, ExternalLink, ArrowLeft, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { resumeData } from "@/data/resume-data";
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 const CV = () => {
-  const cvContentRef = useRef<HTMLDivElement>(null);
   const [isDownloading, setIsDownloading] = useState(false);
 
-  const handleDownloadPDF = async () => {
-    if (!cvContentRef.current) return;
-    
+  const handleDownloadPDF = () => {
     setIsDownloading(true);
     
-    try {
-      const html2pdf = (await import("html2pdf.js")).default;
-      
-      const opt = {
-        margin: [10, 10, 10, 10],
-        filename: "Nirav_Arvinda_CV.pdf",
-        image: { type: "jpeg", quality: 0.98 },
-        html2canvas: { scale: 2, useCORS: true },
-        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
-      };
-
-      await html2pdf().set(opt).from(cvContentRef.current).save();
-    } catch (error) {
-      console.error("Error generating PDF:", error);
-    } finally {
+    // Small delay for UX feedback, then trigger print dialog
+    setTimeout(() => {
+      window.print();
       setIsDownloading(false);
-    }
+    }, 500);
   };
 
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+    <div className="min-h-screen bg-background print:bg-white print:min-h-0">
+      {/* Navigation - hidden when printing */}
+      <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4 print:hidden">
         <div className="flex items-center gap-2 bg-nav/80 backdrop-blur-xl rounded-2xl px-3 py-2 shadow-nav border border-nav-border">
           <Button variant="nav" size="sm" className="rounded-xl gap-2" asChild>
             <Link to="/">
@@ -67,7 +52,7 @@ const CV = () => {
       </nav>
 
       {/* Main Content */}
-      <main ref={cvContentRef} className="max-w-2xl mx-auto px-6 pt-28 pb-20">
+      <main className="max-w-2xl mx-auto px-6 pt-28 pb-20 print:pt-6 print:pb-6">
         {/* Header */}
         <header className="mb-12">
           <div className="flex items-start gap-5 mb-6">
