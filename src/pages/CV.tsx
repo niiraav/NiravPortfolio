@@ -77,7 +77,7 @@ const CV = () => {
           </div>
 
           {/* Links */}
-          <div className="flex flex-wrap gap-3 mb-6">
+          <div className="flex flex-wrap gap-4 mb-6">
             {resumeData.links.map((link) => (
               <a
                 key={link.label}
