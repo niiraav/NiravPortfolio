@@ -17,7 +17,11 @@ const CV = () => {
           </Button>
           <div className="w-px h-5 bg-border" />
           <Button variant="hero" size="sm" className="rounded-xl gap-2" asChild>
-            <a href="/Nirav_UX_UI_CV2024.pdf" download="Nirav_Arvinda_CV.pdf">
+            <a
+              href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Download className="h-4 w-4" />
               Download PDF
             </a>
@@ -88,10 +92,7 @@ const CV = () => {
                 </div>
                 <div className="flex flex-wrap gap-x-4 gap-y-1 text-sm text-muted-foreground mb-3">
                   <span>{job.period}</span>
-                  <span>•</span>
                   <span>{job.location}</span>
-                  <span>•</span>
-                  <span>{job.type}</span>
                 </div>
                 <ul className="space-y-1">
                   {job.bullets.map((bullet, bulletIndex) => (
