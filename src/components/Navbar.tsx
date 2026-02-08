@@ -1,4 +1,5 @@
 import { Home, FileText } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 
@@ -78,16 +79,16 @@ const Navbar = ({ activeSection = "home" }: NavbarProps) => {
           {/* My CV */}
           <div className="relative flex items-center justify-center">
             <Button 
-              variant={activeSection === "about" ? "navActive" : "nav"} 
+              variant={activeSection === "cv" ? "navActive" : "nav"} 
               size="icon"
               className="rounded-xl h-10 w-10"
               asChild
               onMouseEnter={() => setHoveredItem("cv")}
               onMouseLeave={() => setHoveredItem(null)}
             >
-              <a href="https://drive.google.com/file/d/13xzKQZJXQoHyMPpbhQB5bO4XSwUVXJW0/view" target="_blank" rel="noopener noreferrer">
+              <Link to="/cv">
                 <FileText className="h-4 w-4" />
-              </a>
+              </Link>
             </Button>
             <div 
               className={`absolute top-full left-1/2 -translate-x-1/2 mt-2 px-3 py-1.5 bg-foreground/90 text-background text-xs font-medium rounded-lg whitespace-nowrap transition-all duration-200 ${
