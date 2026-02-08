@@ -18,8 +18,8 @@ const Navbar = ({ activeSection = "home" }: NavbarProps) => {
   };
 
   return (
-    <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center opacity-0 animate-fade-in animation-delay-200 px-4">
-      <div className="flex items-center gap-1 bg-nav/80 backdrop-blur-xl rounded-2xl px-2 py-2 shadow-nav border border-nav-border">
+    <nav className="fixed top-6 left-0 right-0 z-50 flex justify-center px-4">
+      <div className="flex items-center gap-2 bg-nav/80 backdrop-blur-xl rounded-2xl px-3 py-2 shadow-nav border border-nav-border">
         <div className="flex items-center gap-1">
           {/* Home */}
           <div className="relative flex items-center justify-center">
